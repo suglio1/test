@@ -186,6 +186,8 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
         jScrollPane4 = new javax.swing.JScrollPane();
         timeZoneTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
+        CLEARBUTTON = new javax.swing.JButton();
+        SUBMITBUTTON = new javax.swing.JButton();
         dockUndockTab = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
@@ -578,6 +580,20 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
             .addGap(0, 247, Short.MAX_VALUE)
         );
 
+        CLEARBUTTON.setText("CLEAR");
+        CLEARBUTTON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLEARBUTTONActionPerformed(evt);
+            }
+        });
+
+        SUBMITBUTTON.setText("SUBMIT");
+        SUBMITBUTTON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SUBMITBUTTONActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -740,25 +756,31 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(LO2_arrivalMin_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(destinationCity_B, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(198, 198, 198)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(arrivalDate_B, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(shiftEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(arriveHour_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(arriveMin_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                    .addComponent(CLEARBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(43, 43, 43)
+                                    .addComponent(SUBMITBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(271, 271, 271))
+                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(destinationCity_B, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(198, 198, 198)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(arrivalDate_B, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel15)
+                                        .addComponent(shiftEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(arriveHour_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(arriveMin_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(189, 439, Short.MAX_VALUE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
@@ -782,7 +804,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                                             .addComponent(departMin_B, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(currentCity_B, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 99, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(10, 10, 10))))
         );
         jPanel9Layout.setVerticalGroup(
@@ -1012,6 +1034,10 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(shiftEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CLEARBUTTON)
+                    .addComponent(SUBMITBUTTON))
                 .addContainerGap())
         );
 
@@ -1340,6 +1366,1912 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
         System.out.println("changed me");
     }                                           
 
+    private void SUBMITBUTTONActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        
+        System.out.println(LO1_arrivalDate.getDate());
+        System.out.println(LO1_departDate.getDate());
+        System.out.println(LO2_arrivalDate.getDate());
+        System.out.println(LO2_departDate.getDate());
+
+       
+        
+        Object LO1_Ahr = LO1_arrivalHour.getSelectedItem();
+        int LO1Hour_arrive = Integer.parseInt(LO1_Ahr.toString());
+        System.out.println(LO1Hour_arrive);
+
+        Object LO1_Amin = LO1_arrivalMin.getSelectedItem();
+        int LO1Min_arrive = Integer.parseInt(LO1_Amin.toString());
+        System.out.println(LO1Min_arrive);
+
+        Object LO1_Dhr = LO1_departHour.getSelectedItem();
+        int LO1Hour_depart = Integer.parseInt(LO1_Dhr.toString());
+        System.out.println(LO1Hour_depart);
+
+        Object LO1_Dmin = LO1_departMin.getSelectedItem();
+        int LO1Min_depart = Integer.parseInt(LO1_Dmin.toString());
+        System.out.println(LO1Min_depart);
+
+        Object LO2_Ahr = LO2_arrivalHour.getSelectedItem();
+        int LO2Hour_arrive = Integer.parseInt(LO2_Ahr.toString());
+        System.out.println(LO2Hour_arrive);
+
+        Object LO2_Amin = LO2_arrivalMin.getSelectedItem();
+        int LO2Min_arrive = Integer.parseInt(LO2_Amin.toString());
+        System.out.println(LO2Min_arrive);
+
+        Object LO2_Dhr = LO2_departHour.getSelectedItem();
+        int LO2Hour_depart = Integer.parseInt(LO2_Dhr.toString());
+        System.out.println(LO2Hour_depart);
+
+        Object LO2_Dmin = LO2_departMin.getSelectedItem();
+        int LO2Min_depart = Integer.parseInt(LO2_Dmin.toString());
+        System.out.println(LO2Min_depart);
+        
+        SUBMITBUTTON.setEnabled(false);
+        CLEARBUTTON.setEnabled(true);
+        
+        String entryCurrent = currentCity.getText().trim();
+        String entryDestination = destinationCity.getText().trim();
+
+        String layOver1String = layoverCity1.getText().trim();
+        String layOver2String = layoverCity2.getText().trim();
+
+        int flag1 = 0;
+        int flag2 = 0;
+        int flag3 = 0;
+        int flag4 = 0;
+
+        Boolean currentEmpty = false;
+        Boolean destinationEmpty = false;
+
+        if (currentCity.getText() == null) {
+            System.out.println("Must enter a current city");
+            currentEmpty = true;
+
+        } else {
+            if (hashTZ.containsKey(entryCurrent)) {
+
+                System.out.println("True, exists here");
+
+                Object value = hashTZ.get(entryCurrent);
+                int inum = (Integer) value;
+
+                System.out.println(inum);
+
+                flag1 = 1;
+
+            } else {
+                System.out.println("False. Not found in data collection");
+            }
+        }
+
+        if (destinationCity.getText() == null) {
+            System.out.println("Must enter a destination city");
+            destinationEmpty = true;
+        } else {
+            if (hashTZ.containsKey(entryDestination)) {
+                System.out.println("True, exists here");
+
+                Object value = hashTZ.get(entryDestination);
+                int inum = (Integer) value;
+                System.out.println(inum);
+
+                flag2 = 1;
+
+            } else {
+                System.out.println("False. Not found in data collection");
+            }
+        }
+
+        if (hashTZ.containsKey(entryCurrent) == false || hashTZ.containsKey(entryDestination) == false) {
+            JOptionPane.showMessageDialog(null, "City doesn't exist");
+            SUBMITBUTTON.setEnabled(true);
+            CLEARBUTTON.setEnabled(false);
+        }
+
+        if (layoverCity1.getText().equals("")) {
+            System.out.println("No Layover picked");
+        } else {
+            if (hashTZ.containsKey(layOver1String)) {
+
+                System.out.println("True, exists here");
+
+                Object value = hashTZ.get(layOver1String);
+                int inum = (Integer) value;
+                System.out.println(inum);
+
+                flag3 = 1;
+
+            } else {
+                System.out.println("False. Not found in data collection");
+            }
+        }
+        
+        if (layoverCity2.getText().equals("")) {
+            System.out.println("No Layover picked");
+        } else {
+            if (hashTZ.containsKey(layOver2String)) {
+
+                System.out.println("True, exists here");
+
+                Object value = hashTZ.get(layOver2String);
+                int inum = (Integer) value;
+                System.out.println(inum);
+                flag4 = 1;
+
+            } else {
+                System.out.println("False. Not found in data collection");
+            }
+        }
+        
+        
+        if (flag1 == 1 && flag2 == 1) {
+            //loop through each hour in cells on 24 hour clock
+            for (int i = 0; i < 24; i++) {
+
+//                //get bedTime hour
+//                Object bedObj = bedTimeH.getSelectedItem();
+//                int bedHour = Integer.parseInt(bedObj.toString());
+//
+//                //get bedTime min
+//                Object bedObj2 = bedTimeM.getSelectedItem();
+//                int bedMin = Integer.parseInt(bedObj2.toString());
+//
+//                //round up the hour if minutes are over 30
+//                if (bedMin > 30) {
+//                    bedHour++;
+//                }
+//
+//                //get wakeUp hour
+//                Object wakeObj = wakeUpH.getSelectedItem();
+//                int wakeHour = Integer.parseInt(wakeObj.toString());
+//
+//                //get wakeUp min
+//                Object wakeObj2 = wakeUpM.getSelectedItem();
+//                int wakeMin = Integer.parseInt(wakeObj2.toString());
+//
+//                //round up the hour if minutes are over 30
+//                if (wakeMin > 30) {
+//                    wakeHour++;
+//                }
+//
+//                //if index is within the period of "sleep"
+//                //if ((i >= bedHour && i <= wakeHour) )
+//                if (i >= bedHour || i <= wakeHour) {
+//                    //just fill all the cells with blue for a test.
+//                    jTable1.getColumnModel().getColumn(i).setCellRenderer(new MyRenderer());
+//
+//                    //make update to time cells
+//                    repaint();
+//                } else //this will be the period of "awake"
+//                {
+//                    //make cells normal fill color
+//                    jTable1.getColumnModel().getColumn(i).setCellRenderer(new MyRenderer2());
+//
+//                    //make update to time cells
+//                    repaint();
+//                }
+            }
+        } else {
+            System.out.println("try again");
+        }
+
+        //// DAYS OF TRAVEL /////
+        HashMap<Integer, String> week = new HashMap<Integer, String>();
+
+        week.put(
+                0, "Sunday");
+        week.put(
+                1, "Monday");
+        week.put(
+                2, "Tuesday");
+        week.put(
+                3, "Wednesday");
+        week.put(
+                4, "Thursday");
+        week.put(
+                5, "Friday");
+        week.put(
+                6, "Saturday");
+
+        DefaultTableModel tbm3 = (DefaultTableModel) travelDaysTable.getModel();
+        SimpleDateFormat mdy = new SimpleDateFormat("MM-dd-yyyy");
+        SimpleDateFormat dayNum = new SimpleDateFormat("u");
+
+        DefaultTableModel tbm = (DefaultTableModel) timeZoneTable.getModel();
+        int inum1;
+        int inum2;
+        int inum3;
+        int inum4;
+
+        int current24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+        int dest24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+        int layOver1_24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+        int layOver2_24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+
+        // Boolean idk = false;
+        //ruby
+        if ((shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null)) {
+//        if ((shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null)
+//         && (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null
+//                && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null)
+//                && (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null
+//                && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO2_arrivalDate.getDate() != null && LO2_departDate.getDate() != null)) {
+
+
+
+//if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null)
+    
+//if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO2_arrivalDate.getDate() != null && LO2_departDate.getDate() != null) 
+
+
+
+
+            if (shiftBegin.getDate().before(shiftEnd.getDate()) && departureDate.getDate().after(shiftBegin.getDate()) && arrivalDate.getDate().before(shiftEnd.getDate()) && arrivalDate.getDate().after(departureDate.getDate())) {
+         
+                
+                
+                /*if ((shiftBegin.getDate().before(shiftEnd.getDate())
+                    && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate()))
+
+                    || (shiftBegin.getDate().before(shiftEnd.getDate())
+                    && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO1_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO1_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO1_departDate.getDate())
+                    && LO1_departDate.getDate().after(shiftBegin.getDate())
+                    && LO1_departDate.getDate().after(departureDate.getDate())
+                    && LO1_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(shiftEnd.getDate()))
+
+                    || (shiftBegin.getDate().before(shiftEnd.getDate())
+                    && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO1_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO1_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO1_departDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO2_arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO2_departDate.getDate())
+                    && LO1_departDate.getDate().after(shiftBegin.getDate())
+                    && LO1_departDate.getDate().after(departureDate.getDate())
+                    && LO1_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(shiftEnd.getDate())
+                    && LO1_departDate.getDate().before(LO2_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(LO2_departDate.getDate())
+                    && LO2_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO2_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO2_arrivalDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO2_arrivalDate.getDate().after(LO1_departDate.getDate())
+                    && LO2_arrivalDate.getDate().before(LO2_departDate.getDate())
+                    && LO2_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO2_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO2_departDate.getDate().after(shiftBegin.getDate())
+                    && LO2_departDate.getDate().after(departureDate.getDate())
+                    && LO2_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO2_departDate.getDate().after(LO1_departDate.getDate())
+                    && LO2_departDate.getDate().after(LO2_arrivalDate.getDate())
+                    && LO2_departDate.getDate().before(arrivalDate.getDate())
+                    && LO2_departDate.getDate().before(shiftEnd.getDate()))) { */
+
+                //1 1 1 1 
+                if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1) {
+
+                    Object value1 = hashTZ.get(currentCity.getText().trim());
+                    inum1 = (Integer) value1;
+
+                    Object value2 = hashTZ.get(destinationCity.getText().trim());
+                    inum2 = (Integer) value2;
+
+                    Object value3 = hashTZ.get(layoverCity1.getText().trim());
+                    inum3 = (Integer) value3;
+
+                    Object value4 = hashTZ.get(layoverCity2.getText().trim());
+                    inum4 = (Integer) value4;
+
+                    for (int i = 0; i < current24.length; i++) {
+                        if (inum1 < 0) {
+
+                            current24[i] += inum1;
+
+                            if (current24[i] == -1) {
+                                current24[i] = 23;
+                            }
+                            if (current24[i] == -2) {
+                                current24[i] = 22;
+                            }
+                            if (current24[i] == -3) {
+                                current24[i] = 21;
+                            }
+                            if (current24[i] == -4) {
+                                current24[i] = 20;
+                            }
+                            if (current24[i] == -5) {
+                                current24[i] = 19;
+                            }
+                            if (current24[i] == -6) {
+                                current24[i] = 18;
+                            }
+                            if (current24[i] == -7) {
+                                current24[i] = 17;
+                            }
+                            if (current24[i] == -8) {
+                                current24[i] = 16;
+                            }
+                            if (current24[i] == -9) {
+                                current24[i] = 15;
+                            }
+                            if (current24[i] == -10) {
+                                current24[i] = 14;
+                            }
+                            if (current24[i] == -11) {
+                                current24[i] = 13;
+                            }
+                            if (current24[i] == -12) {
+                                current24[i] = 12;
+                            }
+                        }
+
+                        if (inum1 > 0) {
+                            current24[i] += inum1;
+
+                            if (current24[i] == 24) {
+                                current24[i] = 0;
+                            }
+                            if (current24[i] == 25) {
+                                current24[i] = 1;
+                            }
+                            if (current24[i] == 26) {
+                                current24[i] = 2;
+                            }
+                            if (current24[i] == 27) {
+                                current24[i] = 3;
+                            }
+                            if (current24[i] == 28) {
+                                current24[i] = 4;
+                            }
+                            if (current24[i] == 29) {
+                                current24[i] = 5;
+                            }
+                            if (current24[i] == 30) {
+                                current24[i] = 6;
+                            }
+                            if (current24[i] == 31) {
+                                current24[i] = 7;
+                            }
+                            if (current24[i] == 32) {
+                                current24[i] = 8;
+                            }
+                            if (current24[i] == 33) {
+                                current24[i] = 9;
+                            }
+                            if (current24[i] == 34) {
+                                current24[i] = 10;
+                            }
+                            if (current24[i] == 35) {
+                                current24[i] = 11;
+                            }
+                        }
+
+                    }
+
+                    for (int i = 0; i < dest24.length; i++) {
+                        if (inum2 < 0) {
+
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == -1) {
+                                dest24[i] = 23;
+                            }
+                            if (dest24[i] == -2) {
+                                dest24[i] = 22;
+                            }
+                            if (dest24[i] == -3) {
+                                dest24[i] = 21;
+                            }
+                            if (dest24[i] == -4) {
+                                dest24[i] = 20;
+                            }
+                            if (dest24[i] == -5) {
+                                dest24[i] = 19;
+                            }
+                            if (dest24[i] == -6) {
+                                dest24[i] = 18;
+                            }
+                            if (dest24[i] == -7) {
+                                dest24[i] = 17;
+                            }
+                            if (dest24[i] == -8) {
+                                dest24[i] = 16;
+                            }
+                            if (dest24[i] == -9) {
+                                dest24[i] = 15;
+                            }
+                            if (dest24[i] == -10) {
+                                dest24[i] = 14;
+                            }
+                            if (dest24[i] == -11) {
+                                dest24[i] = 13;
+                            }
+                            if (dest24[i] == -12) {
+                                dest24[i] = 12;
+                            }
+                        }
+
+                        if (inum2 > 0) {
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == 24) {
+                                dest24[i] = 0;
+                            }
+                            if (dest24[i] == 25) {
+                                dest24[i] = 1;
+                            }
+                            if (dest24[i] == 26) {
+                                dest24[i] = 2;
+                            }
+                            if (dest24[i] == 27) {
+                                dest24[i] = 3;
+                            }
+                            if (dest24[i] == 28) {
+                                dest24[i] = 4;
+                            }
+                            if (dest24[i] == 29) {
+                                dest24[i] = 5;
+                            }
+                            if (dest24[i] == 30) {
+                                dest24[i] = 6;
+                            }
+                            if (dest24[i] == 31) {
+                                dest24[i] = 7;
+                            }
+                            if (dest24[i] == 32) {
+                                dest24[i] = 8;
+                            }
+                            if (dest24[i] == 33) {
+                                dest24[i] = 9;
+                            }
+                            if (dest24[i] == 34) {
+                                dest24[i] = 10;
+                            }
+                            if (dest24[i] == 35) {
+                                dest24[i] = 11;
+                            }
+                        }
+
+                    }
+
+                    for (int i = 0; i < layOver1_24.length; i++) {
+                        if (inum3 < 0) {
+
+                            layOver1_24[i] += inum3;
+
+                            if (layOver1_24[i] == -1) {
+                                layOver1_24[i] = 23;
+                            }
+                            if (layOver1_24[i] == -2) {
+                                layOver1_24[i] = 22;
+                            }
+                            if (layOver1_24[i] == -3) {
+                                layOver1_24[i] = 21;
+                            }
+                            if (layOver1_24[i] == -4) {
+                                layOver1_24[i] = 20;
+                            }
+                            if (layOver1_24[i] == -5) {
+                                layOver1_24[i] = 19;
+                            }
+                            if (layOver1_24[i] == -6) {
+                                layOver1_24[i] = 18;
+                            }
+                            if (layOver1_24[i] == -7) {
+                                layOver1_24[i] = 17;
+                            }
+                            if (layOver1_24[i] == -8) {
+                                layOver1_24[i] = 16;
+                            }
+                            if (layOver1_24[i] == -9) {
+                                layOver1_24[i] = 15;
+                            }
+                            if (layOver1_24[i] == -10) {
+                                layOver1_24[i] = 14;
+                            }
+                            if (layOver1_24[i] == -11) {
+                                layOver1_24[i] = 13;
+                            }
+                            if (layOver1_24[i] == -12) {
+                                layOver1_24[i] = 12;
+                            }
+                        }
+
+                        if (inum3 > 0) {
+                            layOver1_24[i] += inum3;
+
+                            if (layOver1_24[i] == 24) {
+                                layOver1_24[i] = 0;
+                            }
+                            if (layOver1_24[i] == 25) {
+                                layOver1_24[i] = 1;
+                            }
+                            if (layOver1_24[i] == 26) {
+                                layOver1_24[i] = 2;
+                            }
+                            if (layOver1_24[i] == 27) {
+                                layOver1_24[i] = 3;
+                            }
+                            if (layOver1_24[i] == 28) {
+                                layOver1_24[i] = 4;
+                            }
+                            if (layOver1_24[i] == 29) {
+                                layOver1_24[i] = 5;
+                            }
+                            if (layOver1_24[i] == 30) {
+                                layOver1_24[i] = 6;
+                            }
+                            if (layOver1_24[i] == 31) {
+                                layOver1_24[i] = 7;
+                            }
+                            if (layOver1_24[i] == 32) {
+                                layOver1_24[i] = 8;
+                            }
+                            if (layOver1_24[i] == 33) {
+                                layOver1_24[i] = 9;
+                            }
+                            if (layOver1_24[i] == 34) {
+                                layOver1_24[i] = 10;
+                            }
+                            if (layOver1_24[i] == 35) {
+                                layOver1_24[i] = 11;
+                            }
+                        }
+
+                    }
+
+                    for (int i = 0; i < layOver2_24.length; i++) {
+                        if (inum4 < 0) {
+
+                            layOver2_24[i] += inum4;
+
+                            if (layOver2_24[i] == -1) {
+                                layOver2_24[i] = 23;
+                            }
+                            if (layOver2_24[i] == -2) {
+                                layOver2_24[i] = 22;
+                            }
+                            if (layOver2_24[i] == -3) {
+                                layOver2_24[i] = 21;
+                            }
+                            if (layOver2_24[i] == -4) {
+                                layOver2_24[i] = 20;
+                            }
+                            if (layOver2_24[i] == -5) {
+                                layOver2_24[i] = 19;
+                            }
+                            if (layOver2_24[i] == -6) {
+                                layOver2_24[i] = 18;
+                            }
+                            if (layOver2_24[i] == -7) {
+                                layOver2_24[i] = 17;
+                            }
+                            if (layOver2_24[i] == -8) {
+                                layOver2_24[i] = 16;
+                            }
+                            if (layOver2_24[i] == -9) {
+                                layOver2_24[i] = 15;
+                            }
+                            if (layOver2_24[i] == -10) {
+                                layOver2_24[i] = 14;
+                            }
+                            if (layOver2_24[i] == -11) {
+                                layOver2_24[i] = 13;
+                            }
+                            if (layOver2_24[i] == -12) {
+                                layOver2_24[i] = 12;
+                            }
+                        }
+
+                        if (inum4 > 0) {
+                            layOver1_24[i] += inum4;
+
+                            if (layOver2_24[i] == 24) {
+                                layOver2_24[i] = 0;
+                            }
+                            if (layOver2_24[i] == 25) {
+                                layOver2_24[i] = 1;
+                            }
+                            if (layOver2_24[i] == 26) {
+                                layOver2_24[i] = 2;
+                            }
+                            if (layOver2_24[i] == 27) {
+                                layOver2_24[i] = 3;
+                            }
+                            if (layOver2_24[i] == 28) {
+                                layOver2_24[i] = 4;
+                            }
+                            if (layOver2_24[i] == 29) {
+                                layOver2_24[i] = 5;
+                            }
+                            if (layOver2_24[i] == 30) {
+                                layOver2_24[i] = 6;
+                            }
+                            if (layOver2_24[i] == 31) {
+                                layOver2_24[i] = 7;
+                            }
+                            if (layOver2_24[i] == 32) {
+                                layOver2_24[i] = 8;
+                            }
+                            if (layOver2_24[i] == 33) {
+                                layOver2_24[i] = 9;
+                            }
+                            if (layOver2_24[i] == 34) {
+                                layOver2_24[i] = 10;
+                            }
+                            if (layOver2_24[i] == 35) {
+                                layOver2_24[i] = 11;
+                            }
+                        }
+                    }
+
+                    //only add info for current city    
+                    tbm.addRow(new Object[]{currentCity.getText(), current24[0], current24[1], current24[2], current24[3], current24[4], current24[5], current24[6], current24[7], current24[8], current24[9], current24[10], current24[11], current24[12], current24[13], current24[14], current24[15], current24[16], current24[17], current24[18], current24[19], current24[20], current24[21], current24[22], current24[23]});
+
+                    //only add info for layover1 city
+                    tbm.addRow(new Object[]{layoverCity1.getText(), layOver1_24[0], layOver1_24[1], layOver1_24[2], layOver1_24[3], layOver1_24[4], layOver1_24[5], layOver1_24[6], layOver1_24[7], layOver1_24[8], layOver1_24[9], layOver1_24[10], layOver1_24[11], layOver1_24[12], layOver1_24[13], layOver1_24[14], layOver1_24[15], layOver1_24[16], layOver1_24[17], layOver1_24[18], layOver1_24[19], layOver1_24[20], layOver1_24[21], layOver1_24[22], layOver1_24[23]});
+
+                    //only add info for layover2 city
+                    tbm.addRow(new Object[]{layoverCity2.getText(), layOver2_24[0], layOver2_24[1], layOver2_24[2], layOver2_24[3], layOver2_24[4], layOver2_24[5], layOver2_24[6], layOver2_24[7], layOver2_24[8], layOver2_24[9], layOver2_24[10], layOver2_24[11], layOver2_24[12], layOver2_24[13], layOver2_24[14], layOver2_24[15], layOver2_24[16], layOver2_24[17], layOver2_24[18], layOver2_24[19], layOver2_24[20], layOver2_24[21], layOver2_24[22], layOver2_24[23]});
+
+                    //only add info for destination city
+                    tbm.addRow(new Object[]{destinationCity.getText(), dest24[0], dest24[1], dest24[2], dest24[3], dest24[4], dest24[5], dest24[6], dest24[7], dest24[8], dest24[9], dest24[10], dest24[11], dest24[12], dest24[13], dest24[14], dest24[15], dest24[16], dest24[17], dest24[18], dest24[19], dest24[20], dest24[21], dest24[22], dest24[23]});
+                }
+
+                // 1 1 1 0
+                if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 0) {
+
+                    Object value1 = hashTZ.get(currentCity.getText().trim());
+                    inum1 = (Integer) value1;
+
+                    Object value2 = hashTZ.get(destinationCity.getText().trim());
+                    inum2 = (Integer) value2;
+
+                    Object value3 = hashTZ.get(layoverCity1.getText().trim());
+                    inum3 = (Integer) value3;
+
+                    for (int i = 0; i < current24.length; i++) {
+                        if (inum1 < 0) {
+
+                            current24[i] += inum1;
+
+                            if (current24[i] == -1) {
+                                current24[i] = 23;
+                            }
+                            if (current24[i] == -2) {
+                                current24[i] = 22;
+                            }
+                            if (current24[i] == -3) {
+                                current24[i] = 21;
+                            }
+                            if (current24[i] == -4) {
+                                current24[i] = 20;
+                            }
+                            if (current24[i] == -5) {
+                                current24[i] = 19;
+                            }
+                            if (current24[i] == -6) {
+                                current24[i] = 18;
+                            }
+                            if (current24[i] == -7) {
+                                current24[i] = 17;
+                            }
+                            if (current24[i] == -8) {
+                                current24[i] = 16;
+                            }
+                            if (current24[i] == -9) {
+                                current24[i] = 15;
+                            }
+                            if (current24[i] == -10) {
+                                current24[i] = 14;
+                            }
+                            if (current24[i] == -11) {
+                                current24[i] = 13;
+                            }
+                            if (current24[i] == -12) {
+                                current24[i] = 12;
+                            }
+                        }
+
+                        if (inum1 > 0) {
+                            current24[i] += inum1;
+
+                            if (current24[i] == 24) {
+                                current24[i] = 0;
+                            }
+                            if (current24[i] == 25) {
+                                current24[i] = 1;
+                            }
+                            if (current24[i] == 26) {
+                                current24[i] = 2;
+                            }
+                            if (current24[i] == 27) {
+                                current24[i] = 3;
+                            }
+                            if (current24[i] == 28) {
+                                current24[i] = 4;
+                            }
+                            if (current24[i] == 29) {
+                                current24[i] = 5;
+                            }
+                            if (current24[i] == 30) {
+                                current24[i] = 6;
+                            }
+                            if (current24[i] == 31) {
+                                current24[i] = 7;
+                            }
+                            if (current24[i] == 32) {
+                                current24[i] = 8;
+                            }
+                            if (current24[i] == 33) {
+                                current24[i] = 9;
+                            }
+                            if (current24[i] == 34) {
+                                current24[i] = 10;
+                            }
+                            if (current24[i] == 35) {
+                                current24[i] = 11;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < dest24.length; i++) {
+                        if (inum2 < 0) {
+
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == -1) {
+                                dest24[i] = 23;
+                            }
+                            if (dest24[i] == -2) {
+                                dest24[i] = 22;
+                            }
+                            if (dest24[i] == -3) {
+                                dest24[i] = 21;
+                            }
+                            if (dest24[i] == -4) {
+                                dest24[i] = 20;
+                            }
+                            if (dest24[i] == -5) {
+                                dest24[i] = 19;
+                            }
+                            if (dest24[i] == -6) {
+                                dest24[i] = 18;
+                            }
+                            if (dest24[i] == -7) {
+                                dest24[i] = 17;
+                            }
+                            if (dest24[i] == -8) {
+                                dest24[i] = 16;
+                            }
+                            if (dest24[i] == -9) {
+                                dest24[i] = 15;
+                            }
+                            if (dest24[i] == -10) {
+                                dest24[i] = 14;
+                            }
+                            if (dest24[i] == -11) {
+                                dest24[i] = 13;
+                            }
+                            if (dest24[i] == -12) {
+                                dest24[i] = 12;
+                            }
+                        }
+
+                        if (inum2 > 0) {
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == 24) {
+                                dest24[i] = 0;
+                            }
+                            if (dest24[i] == 25) {
+                                dest24[i] = 1;
+                            }
+                            if (dest24[i] == 26) {
+                                dest24[i] = 2;
+                            }
+                            if (dest24[i] == 27) {
+                                dest24[i] = 3;
+                            }
+                            if (dest24[i] == 28) {
+                                dest24[i] = 4;
+                            }
+                            if (dest24[i] == 29) {
+                                dest24[i] = 5;
+                            }
+                            if (dest24[i] == 30) {
+                                dest24[i] = 6;
+                            }
+                            if (dest24[i] == 31) {
+                                dest24[i] = 7;
+                            }
+                            if (dest24[i] == 32) {
+                                dest24[i] = 8;
+                            }
+                            if (dest24[i] == 33) {
+                                dest24[i] = 9;
+                            }
+                            if (dest24[i] == 34) {
+                                dest24[i] = 10;
+                            }
+                            if (dest24[i] == 35) {
+                                dest24[i] = 11;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < layOver1_24.length; i++) {
+                        if (inum3 < 0) {
+
+                            layOver1_24[i] += inum3;
+
+                            if (layOver1_24[i] == -1) {
+                                layOver1_24[i] = 23;
+                            }
+                            if (layOver1_24[i] == -2) {
+                                layOver1_24[i] = 22;
+                            }
+                            if (layOver1_24[i] == -3) {
+                                layOver1_24[i] = 21;
+                            }
+                            if (layOver1_24[i] == -4) {
+                                layOver1_24[i] = 20;
+                            }
+                            if (layOver1_24[i] == -5) {
+                                layOver1_24[i] = 19;
+                            }
+                            if (layOver1_24[i] == -6) {
+                                layOver1_24[i] = 18;
+                            }
+                            if (layOver1_24[i] == -7) {
+                                layOver1_24[i] = 17;
+                            }
+                            if (layOver1_24[i] == -8) {
+                                layOver1_24[i] = 16;
+                            }
+                            if (layOver1_24[i] == -9) {
+                                layOver1_24[i] = 15;
+                            }
+                            if (layOver1_24[i] == -10) {
+                                layOver1_24[i] = 14;
+                            }
+                            if (layOver1_24[i] == -11) {
+                                layOver1_24[i] = 13;
+                            }
+                            if (layOver1_24[i] == -12) {
+                                layOver1_24[i] = 12;
+                            }
+                        }
+
+                        if (inum3 > 0) {
+                            layOver1_24[i] += inum3;
+
+                            if (layOver1_24[i] == 24) {
+                                layOver1_24[i] = 0;
+                            }
+                            if (layOver1_24[i] == 25) {
+                                layOver1_24[i] = 1;
+                            }
+                            if (layOver1_24[i] == 26) {
+                                layOver1_24[i] = 2;
+                            }
+                            if (layOver1_24[i] == 27) {
+                                layOver1_24[i] = 3;
+                            }
+                            if (layOver1_24[i] == 28) {
+                                layOver1_24[i] = 4;
+                            }
+                            if (layOver1_24[i] == 29) {
+                                layOver1_24[i] = 5;
+                            }
+                            if (layOver1_24[i] == 30) {
+                                layOver1_24[i] = 6;
+                            }
+                            if (layOver1_24[i] == 31) {
+                                layOver1_24[i] = 7;
+                            }
+                            if (layOver1_24[i] == 32) {
+                                layOver1_24[i] = 8;
+                            }
+                            if (layOver1_24[i] == 33) {
+                                layOver1_24[i] = 9;
+                            }
+                            if (layOver1_24[i] == 34) {
+                                layOver1_24[i] = 10;
+                            }
+                            if (layOver1_24[i] == 35) {
+                                layOver1_24[i] = 11;
+                            }
+                        }
+                    }
+
+                    //only add info for current city    
+                    tbm.addRow(new Object[]{currentCity.getText(), current24[0], current24[1], current24[2], current24[3], current24[4], current24[5], current24[6], current24[7], current24[8], current24[9], current24[10], current24[11], current24[12], current24[13], current24[14], current24[15], current24[16], current24[17], current24[18], current24[19], current24[20], current24[21], current24[22], current24[23]});
+
+                    //only add info for layover1 city
+                    tbm.addRow(new Object[]{layoverCity1.getText(), layOver1_24[0], layOver1_24[1], layOver1_24[2], layOver1_24[3], layOver1_24[4], layOver1_24[5], layOver1_24[6], layOver1_24[7], layOver1_24[8], layOver1_24[9], layOver1_24[10], layOver1_24[11], layOver1_24[12], layOver1_24[13], layOver1_24[14], layOver1_24[15], layOver1_24[16], layOver1_24[17], layOver1_24[18], layOver1_24[19], layOver1_24[20], layOver1_24[21], layOver1_24[22], layOver1_24[23]});
+
+                    //only add info for destination city
+                    tbm.addRow(new Object[]{destinationCity.getText(), dest24[0], dest24[1], dest24[2], dest24[3], dest24[4], dest24[5], dest24[6], dest24[7], dest24[8], dest24[9], dest24[10], dest24[11], dest24[12], dest24[13], dest24[14], dest24[15], dest24[16], dest24[17], dest24[18], dest24[19], dest24[20], dest24[21], dest24[22], dest24[23]});
+
+                }
+
+                //1 1 0 1
+                if (flag1 == 1 && flag2 == 1 && flag3 == 0 && flag4 == 1) {
+
+                    Object value1 = hashTZ.get(currentCity.getText().trim());
+                    inum1 = (Integer) value1;
+
+                    Object value2 = hashTZ.get(destinationCity.getText().trim());
+                    inum2 = (Integer) value2;
+
+                    Object value4 = hashTZ.get(layoverCity2.getText().trim());
+                    inum4 = (Integer) value4;
+
+                    for (int i = 0; i < current24.length; i++) {
+                        if (inum1 < 0) {
+
+                            current24[i] += inum1;
+
+                            if (current24[i] == -1) {
+                                current24[i] = 23;
+                            }
+                            if (current24[i] == -2) {
+                                current24[i] = 22;
+                            }
+                            if (current24[i] == -3) {
+                                current24[i] = 21;
+                            }
+                            if (current24[i] == -4) {
+                                current24[i] = 20;
+                            }
+                            if (current24[i] == -5) {
+                                current24[i] = 19;
+                            }
+                            if (current24[i] == -6) {
+                                current24[i] = 18;
+                            }
+                            if (current24[i] == -7) {
+                                current24[i] = 17;
+                            }
+                            if (current24[i] == -8) {
+                                current24[i] = 16;
+                            }
+                            if (current24[i] == -9) {
+                                current24[i] = 15;
+                            }
+                            if (current24[i] == -10) {
+                                current24[i] = 14;
+                            }
+                            if (current24[i] == -11) {
+                                current24[i] = 13;
+                            }
+                            if (current24[i] == -12) {
+                                current24[i] = 12;
+                            }
+                        }
+
+                        if (inum1 > 0) {
+                            current24[i] += inum1;
+
+                            if (current24[i] == 24) {
+                                current24[i] = 0;
+                            }
+                            if (current24[i] == 25) {
+                                current24[i] = 1;
+                            }
+                            if (current24[i] == 26) {
+                                current24[i] = 2;
+                            }
+                            if (current24[i] == 27) {
+                                current24[i] = 3;
+                            }
+                            if (current24[i] == 28) {
+                                current24[i] = 4;
+                            }
+                            if (current24[i] == 29) {
+                                current24[i] = 5;
+                            }
+                            if (current24[i] == 30) {
+                                current24[i] = 6;
+                            }
+                            if (current24[i] == 31) {
+                                current24[i] = 7;
+                            }
+                            if (current24[i] == 32) {
+                                current24[i] = 8;
+                            }
+                            if (current24[i] == 33) {
+                                current24[i] = 9;
+                            }
+                            if (current24[i] == 34) {
+                                current24[i] = 10;
+                            }
+                            if (current24[i] == 35) {
+                                current24[i] = 11;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < dest24.length; i++) {
+                        if (inum2 < 0) {
+
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == -1) {
+                                dest24[i] = 23;
+                            }
+                            if (dest24[i] == -2) {
+                                dest24[i] = 22;
+                            }
+                            if (dest24[i] == -3) {
+                                dest24[i] = 21;
+                            }
+                            if (dest24[i] == -4) {
+                                dest24[i] = 20;
+                            }
+                            if (dest24[i] == -5) {
+                                dest24[i] = 19;
+                            }
+                            if (dest24[i] == -6) {
+                                dest24[i] = 18;
+                            }
+                            if (dest24[i] == -7) {
+                                dest24[i] = 17;
+                            }
+                            if (dest24[i] == -8) {
+                                dest24[i] = 16;
+                            }
+                            if (dest24[i] == -9) {
+                                dest24[i] = 15;
+                            }
+                            if (dest24[i] == -10) {
+                                dest24[i] = 14;
+                            }
+                            if (dest24[i] == -11) {
+                                dest24[i] = 13;
+                            }
+                            if (dest24[i] == -12) {
+                                dest24[i] = 12;
+                            }
+                        }
+
+                        if (inum2 > 0) {
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == 24) {
+                                dest24[i] = 0;
+                            }
+                            if (dest24[i] == 25) {
+                                dest24[i] = 1;
+                            }
+                            if (dest24[i] == 26) {
+                                dest24[i] = 2;
+                            }
+                            if (dest24[i] == 27) {
+                                dest24[i] = 3;
+                            }
+                            if (dest24[i] == 28) {
+                                dest24[i] = 4;
+                            }
+                            if (dest24[i] == 29) {
+                                dest24[i] = 5;
+                            }
+                            if (dest24[i] == 30) {
+                                dest24[i] = 6;
+                            }
+                            if (dest24[i] == 31) {
+                                dest24[i] = 7;
+                            }
+                            if (dest24[i] == 32) {
+                                dest24[i] = 8;
+                            }
+                            if (dest24[i] == 33) {
+                                dest24[i] = 9;
+                            }
+                            if (dest24[i] == 34) {
+                                dest24[i] = 10;
+                            }
+                            if (dest24[i] == 35) {
+                                dest24[i] = 11;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < layOver2_24.length; i++) {
+                        if (inum4 < 0) {
+
+                            layOver2_24[i] += inum4;
+
+                            if (layOver2_24[i] == -1) {
+                                layOver2_24[i] = 23;
+                            }
+                            if (layOver2_24[i] == -2) {
+                                layOver2_24[i] = 22;
+                            }
+                            if (layOver2_24[i] == -3) {
+                                layOver2_24[i] = 21;
+                            }
+                            if (layOver2_24[i] == -4) {
+                                layOver2_24[i] = 20;
+                            }
+                            if (layOver2_24[i] == -5) {
+                                layOver2_24[i] = 19;
+                            }
+                            if (layOver2_24[i] == -6) {
+                                layOver2_24[i] = 18;
+                            }
+                            if (layOver2_24[i] == -7) {
+                                layOver2_24[i] = 17;
+                            }
+                            if (layOver2_24[i] == -8) {
+                                layOver2_24[i] = 16;
+                            }
+                            if (layOver2_24[i] == -9) {
+                                layOver2_24[i] = 15;
+                            }
+                            if (layOver2_24[i] == -10) {
+                                layOver2_24[i] = 14;
+                            }
+                            if (layOver2_24[i] == -11) {
+                                layOver2_24[i] = 13;
+                            }
+                            if (layOver2_24[i] == -12) {
+                                layOver2_24[i] = 12;
+                            }
+                        }
+
+                        if (inum4 > 0) {
+                            layOver1_24[i] += inum4;
+
+                            if (layOver2_24[i] == 24) {
+                                layOver2_24[i] = 0;
+                            }
+                            if (layOver2_24[i] == 25) {
+                                layOver2_24[i] = 1;
+                            }
+                            if (layOver2_24[i] == 26) {
+                                layOver2_24[i] = 2;
+                            }
+                            if (layOver2_24[i] == 27) {
+                                layOver2_24[i] = 3;
+                            }
+                            if (layOver2_24[i] == 28) {
+                                layOver2_24[i] = 4;
+                            }
+                            if (layOver2_24[i] == 29) {
+                                layOver2_24[i] = 5;
+                            }
+                            if (layOver2_24[i] == 30) {
+                                layOver2_24[i] = 6;
+                            }
+                            if (layOver2_24[i] == 31) {
+                                layOver2_24[i] = 7;
+                            }
+                            if (layOver2_24[i] == 32) {
+                                layOver2_24[i] = 8;
+                            }
+                            if (layOver2_24[i] == 33) {
+                                layOver2_24[i] = 9;
+                            }
+                            if (layOver2_24[i] == 34) {
+                                layOver2_24[i] = 10;
+                            }
+                            if (layOver2_24[i] == 35) {
+                                layOver2_24[i] = 11;
+                            }
+                        }
+                    }
+
+                    //only add info for current city    
+                    tbm.addRow(new Object[]{currentCity.getText(), current24[0], current24[1], current24[2], current24[3], current24[4], current24[5], current24[6], current24[7], current24[8], current24[9], current24[10], current24[11], current24[12], current24[13], current24[14], current24[15], current24[16], current24[17], current24[18], current24[19], current24[20], current24[21], current24[22], current24[23]});
+
+                    //only add info for layover2 city
+                    tbm.addRow(new Object[]{layoverCity2.getText(), layOver2_24[0], layOver2_24[1], layOver2_24[2], layOver2_24[3], layOver2_24[4], layOver2_24[5], layOver2_24[6], layOver2_24[7], layOver2_24[8], layOver2_24[9], layOver2_24[10], layOver2_24[11], layOver2_24[12], layOver2_24[13], layOver2_24[14], layOver2_24[15], layOver2_24[16], layOver2_24[17], layOver2_24[18], layOver2_24[19], layOver2_24[20], layOver2_24[21], layOver2_24[22], layOver2_24[23]});
+
+                    //only add info for destination city
+                    tbm.addRow(new Object[]{destinationCity.getText(), dest24[0], dest24[1], dest24[2], dest24[3], dest24[4], dest24[5], dest24[6], dest24[7], dest24[8], dest24[9], dest24[10], dest24[11], dest24[12], dest24[13], dest24[14], dest24[15], dest24[16], dest24[17], dest24[18], dest24[19], dest24[20], dest24[21], dest24[22], dest24[23]});
+                }
+
+                //1 1 0 0 
+                if (flag1 == 1 && flag2 == 1 && flag3 == 0 && flag4 == 0) {
+
+                    Object value1 = hashTZ.get(currentCity.getText().trim());
+                    inum1 = (Integer) value1;
+
+                    Object value2 = hashTZ.get(destinationCity.getText().trim());
+                    inum2 = (Integer) value2;
+
+                    for (int i = 0; i < current24.length; i++) {
+                        if (inum1 < 0) {
+
+                            current24[i] += inum1;
+
+                            if (current24[i] == -1) {
+                                current24[i] = 23;
+                            }
+                            if (current24[i] == -2) {
+                                current24[i] = 22;
+                            }
+                            if (current24[i] == -3) {
+                                current24[i] = 21;
+                            }
+                            if (current24[i] == -4) {
+                                current24[i] = 20;
+                            }
+                            if (current24[i] == -5) {
+                                current24[i] = 19;
+                            }
+                            if (current24[i] == -6) {
+                                current24[i] = 18;
+                            }
+                            if (current24[i] == -7) {
+                                current24[i] = 17;
+                            }
+                            if (current24[i] == -8) {
+                                current24[i] = 16;
+                            }
+                            if (current24[i] == -9) {
+                                current24[i] = 15;
+                            }
+                            if (current24[i] == -10) {
+                                current24[i] = 14;
+                            }
+                            if (current24[i] == -11) {
+                                current24[i] = 13;
+                            }
+                            if (current24[i] == -12) {
+                                current24[i] = 12;
+                            }
+                        }
+
+                        if (inum1 > 0) {
+                            current24[i] += inum1;
+
+                            if (current24[i] == 24) {
+                                current24[i] = 0;
+                            }
+                            if (current24[i] == 25) {
+                                current24[i] = 1;
+                            }
+                            if (current24[i] == 26) {
+                                current24[i] = 2;
+                            }
+                            if (current24[i] == 27) {
+                                current24[i] = 3;
+                            }
+                            if (current24[i] == 28) {
+                                current24[i] = 4;
+                            }
+                            if (current24[i] == 29) {
+                                current24[i] = 5;
+                            }
+                            if (current24[i] == 30) {
+                                current24[i] = 6;
+                            }
+                            if (current24[i] == 31) {
+                                current24[i] = 7;
+                            }
+                            if (current24[i] == 32) {
+                                current24[i] = 8;
+                            }
+                            if (current24[i] == 33) {
+                                current24[i] = 9;
+                            }
+                            if (current24[i] == 34) {
+                                current24[i] = 10;
+                            }
+                            if (current24[i] == 35) {
+                                current24[i] = 11;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < dest24.length; i++) {
+                        if (inum2 < 0) {
+
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == -1) {
+                                dest24[i] = 23;
+                            }
+                            if (dest24[i] == -2) {
+                                dest24[i] = 22;
+                            }
+                            if (dest24[i] == -3) {
+                                dest24[i] = 21;
+                            }
+                            if (dest24[i] == -4) {
+                                dest24[i] = 20;
+                            }
+                            if (dest24[i] == -5) {
+                                dest24[i] = 19;
+                            }
+                            if (dest24[i] == -6) {
+                                dest24[i] = 18;
+                            }
+                            if (dest24[i] == -7) {
+                                dest24[i] = 17;
+                            }
+                            if (dest24[i] == -8) {
+                                dest24[i] = 16;
+                            }
+                            if (dest24[i] == -9) {
+                                dest24[i] = 15;
+                            }
+                            if (dest24[i] == -10) {
+                                dest24[i] = 14;
+                            }
+                            if (dest24[i] == -11) {
+                                dest24[i] = 13;
+                            }
+                            if (dest24[i] == -12) {
+                                dest24[i] = 12;
+                            }
+                        }
+
+                        if (inum2 > 0) {
+                            dest24[i] += inum2;
+
+                            if (dest24[i] == 24) {
+                                dest24[i] = 0;
+                            }
+                            if (dest24[i] == 25) {
+                                dest24[i] = 1;
+                            }
+                            if (dest24[i] == 26) {
+                                dest24[i] = 2;
+                            }
+                            if (dest24[i] == 27) {
+                                dest24[i] = 3;
+                            }
+                            if (dest24[i] == 28) {
+                                dest24[i] = 4;
+                            }
+                            if (dest24[i] == 29) {
+                                dest24[i] = 5;
+                            }
+                            if (dest24[i] == 30) {
+                                dest24[i] = 6;
+                            }
+                            if (dest24[i] == 31) {
+                                dest24[i] = 7;
+                            }
+                            if (dest24[i] == 32) {
+                                dest24[i] = 8;
+                            }
+                            if (dest24[i] == 33) {
+                                dest24[i] = 9;
+                            }
+                            if (dest24[i] == 34) {
+                                dest24[i] = 10;
+                            }
+                            if (dest24[i] == 35) {
+                                dest24[i] = 11;
+                            }
+                        }
+                    }
+
+                    //only add info for current city
+                    tbm.addRow(new Object[]{currentCity.getText(), current24[0], current24[1], current24[2], current24[3], current24[4], current24[5], current24[6], current24[7], current24[8], current24[9], current24[10], current24[11], current24[12], current24[13], current24[14], current24[15], current24[16], current24[17], current24[18], current24[19], current24[20], current24[21], current24[22], current24[23]});
+
+                    //only add info for destination city
+                    tbm.addRow(new Object[]{destinationCity.getText(), dest24[0], dest24[1], dest24[2], dest24[3], dest24[4], dest24[5], dest24[6], dest24[7], dest24[8], dest24[9], dest24[10], dest24[11], dest24[12], dest24[13], dest24[14], dest24[15], dest24[16], dest24[17], dest24[18], dest24[19], dest24[20], dest24[21], dest24[22], dest24[23]});
+                }
+
+                int day = Integer.parseInt(dayNum.format(shiftBegin.getDate()));
+
+                String dateInc = mdy.format(shiftBegin.getDate());
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar c = Calendar.getInstance();
+
+                try {
+                    c.setTime(sdf.parse(dateInc));
+                } catch (Exception e) {
+                    //The handling for the code
+                }
+
+                Object value4 = week.get(day);
+
+                c.add(Calendar.DATE, 0);  // number of days to add
+                dateInc = sdf.format(c.getTime());
+
+                day += 1;
+
+                tbm3.addRow(new Object[]{value4, dateInc, null, null});
+
+                String dateInc2 = mdy.format(shiftBegin.getDate());
+                SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar c2 = Calendar.getInstance();
+
+                String dateInc3 = mdy.format(shiftEnd.getDate());
+                SimpleDateFormat sdf3 = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar c3 = Calendar.getInstance();
+
+                SimpleDateFormat sdf4 = new SimpleDateFormat("MM-dd-yyyy");
+
+                //Given start Date
+                String start_date = dateInc2;
+
+                // Given end Date 
+                String end_date = dateInc3;
+
+                /////
+                String dateIncDepart = mdy.format(departureDate.getDate());
+                SimpleDateFormat sdfDepart = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar cDept = Calendar.getInstance();
+
+                String dateIncArrive = mdy.format(arrivalDate.getDate());
+                SimpleDateFormat sdfArrive = new SimpleDateFormat("MM-dd-yyyy");
+                Calendar cArrive = Calendar.getInstance();
+                //////
+
+                String year = "2021";
+                SimpleDateFormat test = new SimpleDateFormat("MM-dd-" + year);
+
+                // Try Block 
+                try {
+
+                    Date d1 = sdf4.parse(mdy.format(shiftBegin.getDate()));
+                    Date d2 = sdf4.parse(end_date);
+
+                    Date depart = sdf4.parse(mdy.format(departureDate.getDate()));
+                    Date arrive = sdf4.parse(mdy.format(arrivalDate.getDate()));
+
+                    SimpleDateFormat sdfDynamic = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+
+                    String dateIncArriveTest = mdy.format(arrivalDate.getDate());
+
+                    Object dhObj = departHour.getSelectedItem();
+                    int dhInt = Integer.valueOf((String) dhObj);
+
+                    Object ahObj = arriveHour.getSelectedItem();
+                    int ahInt = Integer.valueOf((String) ahObj);
+
+                    String departY = String.valueOf(departureDate.getDate());
+                    String departureYear = departY.substring(departY.length() - 4);
+
+                    String departureHr = String.valueOf(departHour.getSelectedItem());
+                    String departureMin = String.valueOf(departMin.getSelectedItem());
+                    String departureSec = "00";
+
+                    SimpleDateFormat sdfDepartTest = new SimpleDateFormat("MM-dd-" + departureYear + " " + departureHr + ":" + departureMin + ":" + departureSec);
+                    Date departDynamic = sdfDynamic.parse(sdfDepartTest.format(departureDate.getDate()));
+
+                    String arriveY = String.valueOf(arrivalDate.getDate());
+                    String arrivalYear = departY.substring(arriveY.length() - 4);
+
+                    String arrivalHr = String.valueOf(arriveHour.getSelectedItem());
+                    String arrivalMin = String.valueOf(arriveMin.getSelectedItem());
+                    String arrivalSec = "00";
+
+                    SimpleDateFormat sdfArriveTest = new SimpleDateFormat("MM-dd-" + arrivalYear + " " + arrivalHr + ":" + arrivalMin + ":" + arrivalSec);
+                    Date arriveDynamic = sdfDynamic.parse(sdfArriveTest.format(arrivalDate.getDate()));
+
+                    System.out.println("DEPARTURE DYNAMIC: " + departDynamic);
+                    System.out.println("ARRIVAL DYNAMIC: " + arriveDynamic);
+
+                    System.out.println("DEPARTURE DYNAMIC: (ms) " + departDynamic.getTime());
+                    System.out.println("ARRIVAL DYNAMIC: (ms) " + arriveDynamic.getTime());
+
+                    // Calculate time difference 
+                    // in milliseconds 
+                    long difference_In_Time = d2.getTime() - d1.getTime();
+
+                    long travel = arriveDynamic.getTime() - departDynamic.getTime();
+
+                    // Calculate time difference in 
+                    // seconds, minutes, hours, years, 
+                    // and days 
+                    long difference_In_Seconds
+                            = (difference_In_Time / 1000) % 60;
+
+                    long difference_In_Minutes
+                            = (difference_In_Time / (1000 * 60)) % 60;
+
+                    long difference_In_Hours
+                            = (difference_In_Time / (1000 * 60 * 60)) % 24;
+
+                    long difference_In_Years
+                            = (difference_In_Time / (1000l * 60 * 60 * 24 * 365));
+
+                    long difference_In_Days
+                            = (difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
+
+                    ///////
+                    long difference_In_SecondsT
+                            = (travel / 1000) % 60;
+
+                    long difference_In_MinutesT
+                            = (travel / (1000 * 60)) % 60;
+
+                    long difference_In_HoursT
+                            = (travel / (1000 * 60 * 60)) % 24;
+
+                    long difference_In_YearsT
+                            = (travel / (1000l * 60 * 60 * 24 * 365));
+
+                    long difference_In_DaysT
+                            = (travel / (1000 * 60 * 60 * 24)) % 365;
+
+                    System.out.println("difference in years " + difference_In_YearsT);
+                    System.out.println("difference in days " + difference_In_DaysT);
+                    System.out.println("difference in hours " + difference_In_HoursT);
+                    System.out.println("difference in minutes " + difference_In_MinutesT);
+                    System.out.println("difference in seconds " + difference_In_SecondsT);
+
+                    System.out.println("MS difference " + travel);
+
+                    long travelHours = TimeUnit.MILLISECONDS.toHours(travel);
+
+                    System.out.println(travelHours);
+
+                    int hours = (int) travelHours;
+
+                    for (int i = 1; i <= difference_In_Days; i++) {
+                        Object value = week.get(day);
+
+                        c.add(Calendar.DATE, 1);  // number of days to add
+                        dateInc = sdf.format(c.getTime());
+
+                        tbm3.addRow(new Object[]{value, dateInc, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null});
+
+                        day++;
+
+                        if (day > 6) {
+                            day = 0;
+                        }
+
+                        //get depart hour
+                        Object departObj = departHour.getSelectedItem();
+                        int departHour = Integer.parseInt(departObj.toString());
+
+                        //get depart min
+                        Object departObj2 = departMin.getSelectedItem();
+                        int departMin = Integer.parseInt(departObj2.toString());
+
+                        //round up the hour if minutes are over 30
+                        if (departMin > 30) {
+                            departHour++;
+                        }
+
+                        //get arrive hour
+                        Object arrivalObj = arriveHour.getSelectedItem();
+                        int arrivalHour = Integer.parseInt(arrivalObj.toString());
+
+                        //get arrive min
+                        Object arrivalObj2 = arriveMin.getSelectedItem();
+                        int arrivalMinute = Integer.parseInt(arrivalObj2.toString());
+
+                        //round up the hour if minutes are over 30
+                        if (arrivalMinute > 30) {
+                            arrivalHour++;
+                        }
+
+                        int duration = arrivalHour - departHour;
+
+                        Date d3 = sdf4.parse(mdy.format(shiftBegin.getDate()));
+                        Date d4 = sdf4.parse(end_date);
+
+                        /*
+                        Object bedObj = bedTimeH.getSelectedItem();
+                        int bedHour = Integer.parseInt(bedObj.toString());
+
+                        //get bedTime min
+                        Object bedObj2 = bedTimeM.getSelectedItem();
+                        int bedMin = Integer.parseInt(bedObj2.toString());
+
+                        //round up the hour if minutes are over 30
+                        if (bedMin > 30) {
+                            bedHour++;
+                        }
+
+                        //get wakeUp hour
+                        Object wakeObj = wakeUpH.getSelectedItem();                                    
+                        int wakeHour = Integer.parseInt(wakeObj.toString());
+
+                        //get wakeUp min
+                        Object wakeObj2 = wakeUpM.getSelectedItem();
+                        int wakeMin = Integer.parseInt(wakeObj2.toString());
+
+                        //round up the hour if minutes are over 30
+                        if (wakeMin > 30) {
+                            wakeHour++;
+                        }
+   
+                        bedHour += 1;
+                        wakeHour += 2;
+                         */
+ /*
+                       for (int j = 2; j < 26; j++)
+                       {                           
+                           
+                           if (j <= bedHour && j >= wakeHour)
+                           {
+                             travelDaysTable.getColumnModel().getColumn(j).setCellRenderer( new MyRenderer2() );  
+                           }
+                            
+                           else 
+                           {
+                             travelDaysTable.getColumnModel().getColumn(j).setCellRenderer( new MyRenderer() );  
+                           }
+                                                     
+                           //before dr hart
+                           //end tag dr hart
+                        }                     
+                         */
+                    }
+
+//                    Object bedObj = bedTimeH.getSelectedItem();
+//                    int bedHour = Integer.parseInt(bedObj.toString());
+//
+//                    //get bedTime min
+//                    Object bedObj2 = bedTimeM.getSelectedItem();
+//                    int bedMin = Integer.parseInt(bedObj2.toString());
+
+                    //round up the hour if minutes are over 30
+//                    if (bedMin > 30) {
+//                        bedHour++;
+//                    }
+//
+//                    //get wakeUp hour
+//                    Object wakeObj = wakeUpH.getSelectedItem();
+//                    int wakeHour = Integer.parseInt(wakeObj.toString());
+//
+//                    //get wakeUp min
+//                    Object wakeObj2 = wakeUpM.getSelectedItem();
+//                    int wakeMin = Integer.parseInt(wakeObj2.toString());
+//
+//                    //round up the hour if minutes are over 30
+//                    if (wakeMin > 30) {
+//                        wakeHour++;
+//                    }
+//
+//                    bedHour += 1;
+//                    wakeHour += 2;
+
+                    int leaveIndex = 0;
+
+                    int arriveIndex = 0;
+
+                    travelDaysTable.getColumnModel().getColumn(1).setCellRenderer(new DefaultTableCellRenderer() {
+
+                        @Override
+                        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+
+                            DefaultTableCellRenderer comp = (DefaultTableCellRenderer) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+                            int test = 0;
+                            Boolean finished = false;
+                            if (table.getModel().getValueAt(row, column).equals(dateIncDepart)) {
+                                comp.setForeground(Color.blue);
+                            } else if (table.getModel().getValueAt(row, column).equals(dateIncArrive)) {
+                                comp.setForeground(Color.orange);
+                            } else {
+                                comp.setForeground(Color.black);
+                            }
+
+                            return comp;
+                        }
+                    });
+
+                    int duration2 = (int) difference_In_Days;
+                    Object[][] smily = new Object[duration2][24];
+
+                    String[] columnNames = new String[]{"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
+                    Object[][] rowData = smily;
+
+                    alexTable = new JTable(rowData, columnNames);
+                    alexTable.setRowHeight(30);
+                    alexTable.getTableHeader().setResizingAllowed(false);
+                    alexTable.getTableHeader().setReorderingAllowed(false);                  
+                    alexTable.setCellSelectionEnabled(false);                   
+                    alexTable.setShowGrid(true);
+                    alexTable.setEnabled(false);
+
+                    for (int i = 0; i < alexTable.getColumnModel().getColumnCount(); i++) {
+                        TableColumn column = alexTable.getColumnModel().getColumn(i);
+                        column.setPreferredWidth(45);
+                    }
+
+                    jPanel2.setLayout(new BorderLayout());
+                    jPanel2.add(alexTable.getTableHeader(), BorderLayout.PAGE_START);
+                    jPanel2.add(alexTable, BorderLayout.CENTER);
+
+                    for (int j = 0; j <= alexTable.getColumnModel().getColumnCount(); j++) {
+
+                        int columnDepart = 0;
+                        int columnDepart2 = 0;
+
+                        int row1;
+                        int row2 = 0;
+                        int col1;
+                        int col2 = 0;
+
+                        for (int k = 0; k <= duration2; k++) {
+                            if (travelDaysTable.getModel().getValueAt(k, 1).equals(dateIncArrive)) {
+
+                                Object get2 = hashTZ.get(entryDestination);
+                                int inumH = (Integer) get2;
+                                columnDepart2 = ahInt - inumH;
+
+                                if (columnDepart2 < 0) {
+                                    columnDepart2 = 24 - Math.abs(columnDepart2);
+                                }
+
+                                if (columnDepart2 > 24) {
+                                    columnDepart2 = Math.abs(24 - columnDepart2);
+                                }
+                                //    ahInt
+
+                                rowData[k][columnDepart2] = Character.toString((char) 9992);
+
+                                row2 = k;
+                                // System.out.println("ROW DEPART " + j);
+
+                                col2 = columnDepart2;
+                                //  System.out.println("COL DEPART " + columnDepart2);
+
+                                for (int jj = 0; jj <= alexTable.getColumnModel().getColumnCount(); jj++) {
+
+                                    for (int kk = 0; kk <= duration2; kk++) {
+                                        if (travelDaysTable.getModel().getValueAt(kk, 1).equals(dateIncDepart)) {
+
+                                            Object get = hashTZ.get(entryCurrent);
+                                            int inum = (Integer) get;
+
+                                            columnDepart = (dhInt - inum);
+                                            System.out.println("DEPART " + columnDepart);
+
+                                            if (columnDepart < 0) {
+                                                columnDepart = 24 - Math.abs(columnDepart);
+                                            }
+
+                                            if (columnDepart > 24) {
+                                                columnDepart = Math.abs(24 - columnDepart);
+                                            }
+
+                                            // dhInt
+                                            rowData[kk][columnDepart] = Character.toString((char) 9992);
+
+                                            //int B = travelDaysTable.getModel().getValueAt(j, 1).equals(dateIncDepart) - travelDaysTable.getModel().getValueAt(j, 1).equals(dateIncArrive);
+                                            //System.out.println("ROW DEPART " + jj);
+                                            // System.out.println("COL DEPART " + columnDepart);
+                                            //modify
+                                            //System.out.println("RUBY " + row2 + " tutu " + col2);
+                                            //distance(kk, columnDepart, k, columnDepart2) - 1
+                                            //distance(int row1, int col1, int row2, int col2)
+                                            int span = distance(kk, columnDepart, k, columnDepart2) - 1;
+
+                                            if (span >= 47) {
+
+                                                // JOptionPane.showMessageDialog(null, "Flight is too long!");
+                                                //submitButton.setEnabled(true);
+                                                // clearButton.setEnabled(false);
+                                            } else {
+                                                modify(rowData, span, kk, columnDepart + 1);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                } // Catch the Exception 
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("missing calendar dates or calendar mismatch");
+                JOptionPane.showMessageDialog(null, "missing calendar dates or calendar mismatch");
+                SUBMITBUTTON.setEnabled(true);
+                CLEARBUTTON.setEnabled(false);
+            }
+        } else {
+            System.out.println("missing calendar dates or calendar mismatch");
+            JOptionPane.showMessageDialog(null, "missing calendar dates or calendar mismatch");
+            //submitButton.setEnabled(true);
+            //clearButton.setEnabled(false);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }                                            
+
+    private void CLEARBUTTONActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        
+        alexTable.setModel(new DefaultTableModel());
+
+        DefaultTableModel dm = (DefaultTableModel) alexTable.getModel();
+
+        for (int i = dm.getRowCount() - 1; i >= 0; i--) {
+            dm.removeRow(i);
+        }
+
+        currentCity.setText(null);
+        destinationCity.setText(null);
+        layoverCity1.setText(null);
+        layoverCity2.setText(null);
+
+        DefaultTableModel tbm = (DefaultTableModel) timeZoneTable.getModel();
+
+        for (int i = tbm.getRowCount() - 1; i >= 0; i--) {
+            tbm.removeRow(i);
+        }
+
+        DefaultTableModel tbm3 = (DefaultTableModel) travelDaysTable.getModel();
+
+        for (int i = tbm3.getRowCount() - 1; i >= 0; i--) {
+            tbm3.removeRow(i);
+        }
+
+        shiftBegin.setCalendar(null);
+        shiftEnd.setCalendar(null);
+
+        departureDate.setCalendar(null);
+        arrivalDate.setCalendar(null);
+
+//        bedTimeH.setSelectedIndex(0);
+//        bedTimeM.setSelectedIndex(0);
+//
+//        wakeUpH.setSelectedIndex(0);
+//        wakeUpM.setSelectedIndex(0);
+
+        ////////////
+        //mom 
+        LO1_arrivalDate.setCalendar(null);
+        LO1_arrivalHour.setSelectedIndex(0);
+        LO1_arrivalMin.setSelectedIndex(0);
+
+        LO1_departDate.setCalendar(null);
+        LO1_departHour.setSelectedIndex(0);
+        LO1_departMin.setSelectedIndex(0);
+
+        LO2_arrivalDate.setCalendar(null);
+        LO2_arrivalHour.setSelectedIndex(0);
+        LO2_arrivalHour.setSelectedIndex(0);
+
+        LO2_departDate.setCalendar(null);
+        LO2_departHour.setSelectedIndex(0);
+        LO2_departHour.setSelectedIndex(0);
+
+        SUBMITBUTTON.setEnabled(true);
+        CLEARBUTTON.setEnabled(false);
+        
+       
+    }                                           
+
     static void modify(Object[][] array, int span, int anchorRowPosition, int anchorColPosition) {
 
         int rows = array.length;
@@ -1496,6 +3428,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JButton CLEARBUTTON;
     private com.toedter.calendar.JDateChooser LO1_arrivalDate;
     private com.toedter.calendar.JDateChooser LO1_arrivalDate_B;
     private javax.swing.JComboBox<String> LO1_arrivalHour;
@@ -1520,6 +3453,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
     private javax.swing.JComboBox<String> LO2_departHour_B;
     private javax.swing.JComboBox<String> LO2_departMin;
     private javax.swing.JComboBox<String> LO2_departMin_B;
+    private javax.swing.JButton SUBMITBUTTON;
     private com.toedter.calendar.JDateChooser arrivalDate;
     private com.toedter.calendar.JDateChooser arrivalDate_B;
     private javax.swing.JComboBox<String> arriveHour;
