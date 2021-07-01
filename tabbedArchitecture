@@ -1368,14 +1368,12 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
 
     private void SUBMITBUTTONActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-        
+
         System.out.println(LO1_arrivalDate.getDate());
         System.out.println(LO1_departDate.getDate());
         System.out.println(LO2_arrivalDate.getDate());
         System.out.println(LO2_departDate.getDate());
 
-       
-        
         Object LO1_Ahr = LO1_arrivalHour.getSelectedItem();
         int LO1Hour_arrive = Integer.parseInt(LO1_Ahr.toString());
         System.out.println(LO1Hour_arrive);
@@ -1407,10 +1405,10 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
         Object LO2_Dmin = LO2_departMin.getSelectedItem();
         int LO2Min_depart = Integer.parseInt(LO2_Dmin.toString());
         System.out.println(LO2Min_depart);
-        
+
         SUBMITBUTTON.setEnabled(false);
         CLEARBUTTON.setEnabled(true);
-        
+
         String entryCurrent = currentCity.getText().trim();
         String entryDestination = destinationCity.getText().trim();
 
@@ -1487,7 +1485,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                 System.out.println("False. Not found in data collection");
             }
         }
-        
+
         if (layoverCity2.getText().equals("")) {
             System.out.println("No Layover picked");
         } else {
@@ -1503,58 +1501,6 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
             } else {
                 System.out.println("False. Not found in data collection");
             }
-        }
-        
-        
-        if (flag1 == 1 && flag2 == 1) {
-            //loop through each hour in cells on 24 hour clock
-            for (int i = 0; i < 24; i++) {
-
-//                //get bedTime hour
-//                Object bedObj = bedTimeH.getSelectedItem();
-//                int bedHour = Integer.parseInt(bedObj.toString());
-//
-//                //get bedTime min
-//                Object bedObj2 = bedTimeM.getSelectedItem();
-//                int bedMin = Integer.parseInt(bedObj2.toString());
-//
-//                //round up the hour if minutes are over 30
-//                if (bedMin > 30) {
-//                    bedHour++;
-//                }
-//
-//                //get wakeUp hour
-//                Object wakeObj = wakeUpH.getSelectedItem();
-//                int wakeHour = Integer.parseInt(wakeObj.toString());
-//
-//                //get wakeUp min
-//                Object wakeObj2 = wakeUpM.getSelectedItem();
-//                int wakeMin = Integer.parseInt(wakeObj2.toString());
-//
-//                //round up the hour if minutes are over 30
-//                if (wakeMin > 30) {
-//                    wakeHour++;
-//                }
-//
-//                //if index is within the period of "sleep"
-//                //if ((i >= bedHour && i <= wakeHour) )
-//                if (i >= bedHour || i <= wakeHour) {
-//                    //just fill all the cells with blue for a test.
-//                    jTable1.getColumnModel().getColumn(i).setCellRenderer(new MyRenderer());
-//
-//                    //make update to time cells
-//                    repaint();
-//                } else //this will be the period of "awake"
-//                {
-//                    //make cells normal fill color
-//                    jTable1.getColumnModel().getColumn(i).setCellRenderer(new MyRenderer2());
-//
-//                    //make update to time cells
-//                    repaint();
-//                }
-            }
-        } else {
-            System.out.println("try again");
         }
 
         //// DAYS OF TRAVEL /////
@@ -1590,6 +1536,131 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
         int layOver1_24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
         int layOver2_24[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
 
+        int scenario1 = 0;
+        int scenario2 = 0;
+        int scenario3 = 0;
+
+        if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO1_arrivalDate.getDate() != null && LO2_departDate.getDate() != null && LO2_arrivalDate.getDate() != null) {
+
+            if (shiftBegin.getDate().before(shiftEnd.getDate())
+                    && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO1_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO1_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO1_departDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO2_arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO2_departDate.getDate())
+                    && LO1_departDate.getDate().after(shiftBegin.getDate())
+                    && LO1_departDate.getDate().after(departureDate.getDate())
+                    && LO1_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(shiftEnd.getDate())
+                    && LO1_departDate.getDate().before(LO2_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(LO2_departDate.getDate())
+                    && LO2_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO2_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO2_arrivalDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO2_arrivalDate.getDate().after(LO1_departDate.getDate())
+                    && LO2_arrivalDate.getDate().before(LO2_departDate.getDate())
+                    && LO2_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO2_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO2_departDate.getDate().after(shiftBegin.getDate())
+                    && LO2_departDate.getDate().after(departureDate.getDate())
+                    && LO2_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO2_departDate.getDate().after(LO1_departDate.getDate())
+                    && LO2_departDate.getDate().after(LO2_arrivalDate.getDate())
+                    && LO2_departDate.getDate().before(arrivalDate.getDate())
+                    && LO2_departDate.getDate().before(shiftEnd.getDate())) {
+                scenario1 = 0;
+                scenario2 = 0;
+                scenario3 = 1;
+            }
+        } 
+        
+        else if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO1_arrivalDate.getDate() != null) {
+
+            if ((shiftBegin.getDate().before(shiftEnd.getDate()) && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().after(shiftBegin.getDate())
+                    && LO1_arrivalDate.getDate().after(departureDate.getDate())
+                    && LO1_arrivalDate.getDate().before(shiftEnd.getDate())
+                    && LO1_arrivalDate.getDate().before(arrivalDate.getDate())
+                    && LO1_arrivalDate.getDate().before(LO1_departDate.getDate())
+                    && LO1_departDate.getDate().after(shiftBegin.getDate())
+                    && LO1_departDate.getDate().after(departureDate.getDate())
+                    && LO1_departDate.getDate().after(LO1_arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(arrivalDate.getDate())
+                    && LO1_departDate.getDate().before(shiftEnd.getDate()))) {
+                scenario1 = 0;
+                scenario2 = 1;
+                scenario3 = 0;
+            }
+        }
+
+        
+               else if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_departDate.getDate() == null && LO1_arrivalDate.getDate() == null && LO2_departDate.getDate() != null && LO2_arrivalDate.getDate() != null) {
+       
+           System.out.println("RUBY LOVES YOU");
+           
+       }
+       else if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null) {
+
+            if (shiftBegin.getDate().before(shiftEnd.getDate())
+                    && departureDate.getDate().after(shiftBegin.getDate())
+                    && arrivalDate.getDate().before(shiftEnd.getDate())
+                    && arrivalDate.getDate().after(departureDate.getDate())) {
+                scenario1 = 1;
+                scenario2 = 0;
+                scenario3 = 0;
+            }
+        }
+       
+       
+ 
+//       
+       else {
+
+            System.out.println("something else");
+            /*
+            if (scenario1 == 1 && scenario2 == 0 && scenario3 == 0) {
+                System.out.println("SCENARIO1 ACTIVATED");
+            }
+
+            if (scenario1 == 0 && scenario2 == 1 && scenario3 == 0) {
+                System.out.println("SCENARIO2 ACTIVATED");
+            }
+
+            if (scenario1 == 0 && scenario2 == 0 && scenario3 == 1) {
+                System.out.println("SCENARIO3 ACTIVATED");
+            }
+             */
+            //else {
+            //  System.out.println("something else");
+            // }
+        }
+
+        System.out.println("SC1 " + scenario1);
+        System.out.println("SC2 " + scenario2);
+        System.out.println("SC3 " + scenario3);
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // Boolean idk = false;
         //ruby
         if ((shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null)) {
@@ -1599,19 +1670,10 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
 //                && (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null
 //                && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO2_arrivalDate.getDate() != null && LO2_departDate.getDate() != null)) {
 
-
-
 //if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null)
-    
 //if (shiftBegin.getDate() != null && shiftEnd.getDate() != null && departureDate.getDate() != null && arrivalDate.getDate() != null && LO1_arrivalDate.getDate() != null && LO1_departDate.getDate() != null && LO2_arrivalDate.getDate() != null && LO2_departDate.getDate() != null) 
-
-
-
-
             if (shiftBegin.getDate().before(shiftEnd.getDate()) && departureDate.getDate().after(shiftBegin.getDate()) && arrivalDate.getDate().before(shiftEnd.getDate()) && arrivalDate.getDate().after(departureDate.getDate())) {
-         
-                
-                
+
                 /*if ((shiftBegin.getDate().before(shiftEnd.getDate())
                     && arrivalDate.getDate().before(shiftEnd.getDate())
                     && departureDate.getDate().after(shiftBegin.getDate())
@@ -1664,7 +1726,6 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                     && LO2_departDate.getDate().after(LO2_arrivalDate.getDate())
                     && LO2_departDate.getDate().before(arrivalDate.getDate())
                     && LO2_departDate.getDate().before(shiftEnd.getDate()))) { */
-
                 //1 1 1 1 
                 if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1) {
 
@@ -2971,82 +3032,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                         Date d3 = sdf4.parse(mdy.format(shiftBegin.getDate()));
                         Date d4 = sdf4.parse(end_date);
 
-                        /*
-                        Object bedObj = bedTimeH.getSelectedItem();
-                        int bedHour = Integer.parseInt(bedObj.toString());
-
-                        //get bedTime min
-                        Object bedObj2 = bedTimeM.getSelectedItem();
-                        int bedMin = Integer.parseInt(bedObj2.toString());
-
-                        //round up the hour if minutes are over 30
-                        if (bedMin > 30) {
-                            bedHour++;
-                        }
-
-                        //get wakeUp hour
-                        Object wakeObj = wakeUpH.getSelectedItem();                                    
-                        int wakeHour = Integer.parseInt(wakeObj.toString());
-
-                        //get wakeUp min
-                        Object wakeObj2 = wakeUpM.getSelectedItem();
-                        int wakeMin = Integer.parseInt(wakeObj2.toString());
-
-                        //round up the hour if minutes are over 30
-                        if (wakeMin > 30) {
-                            wakeHour++;
-                        }
-   
-                        bedHour += 1;
-                        wakeHour += 2;
-                         */
- /*
-                       for (int j = 2; j < 26; j++)
-                       {                           
-                           
-                           if (j <= bedHour && j >= wakeHour)
-                           {
-                             travelDaysTable.getColumnModel().getColumn(j).setCellRenderer( new MyRenderer2() );  
-                           }
-                            
-                           else 
-                           {
-                             travelDaysTable.getColumnModel().getColumn(j).setCellRenderer( new MyRenderer() );  
-                           }
-                                                     
-                           //before dr hart
-                           //end tag dr hart
-                        }                     
-                         */
                     }
-
-//                    Object bedObj = bedTimeH.getSelectedItem();
-//                    int bedHour = Integer.parseInt(bedObj.toString());
-//
-//                    //get bedTime min
-//                    Object bedObj2 = bedTimeM.getSelectedItem();
-//                    int bedMin = Integer.parseInt(bedObj2.toString());
-
-                    //round up the hour if minutes are over 30
-//                    if (bedMin > 30) {
-//                        bedHour++;
-//                    }
-//
-//                    //get wakeUp hour
-//                    Object wakeObj = wakeUpH.getSelectedItem();
-//                    int wakeHour = Integer.parseInt(wakeObj.toString());
-//
-//                    //get wakeUp min
-//                    Object wakeObj2 = wakeUpM.getSelectedItem();
-//                    int wakeMin = Integer.parseInt(wakeObj2.toString());
-//
-//                    //round up the hour if minutes are over 30
-//                    if (wakeMin > 30) {
-//                        wakeHour++;
-//                    }
-//
-//                    bedHour += 1;
-//                    wakeHour += 2;
 
                     int leaveIndex = 0;
 
@@ -3082,8 +3068,8 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                     alexTable = new JTable(rowData, columnNames);
                     alexTable.setRowHeight(30);
                     alexTable.getTableHeader().setResizingAllowed(false);
-                    alexTable.getTableHeader().setReorderingAllowed(false);                  
-                    alexTable.setCellSelectionEnabled(false);                   
+                    alexTable.getTableHeader().setReorderingAllowed(false);
+                    alexTable.setCellSelectionEnabled(false);
                     alexTable.setShowGrid(true);
                     alexTable.setEnabled(false);
 
@@ -3139,7 +3125,7 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
                                             int inum = (Integer) get;
 
                                             columnDepart = (dhInt - inum);
-                                            System.out.println("DEPART " + columnDepart);
+                                            //System.out.println("DEPART " + columnDepart);
 
                                             if (columnDepart < 0) {
                                                 columnDepart = 24 - Math.abs(columnDepart);
@@ -3192,25 +3178,13 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
             //submitButton.setEnabled(true);
             //clearButton.setEnabled(false);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
     }                                            
 
     private void CLEARBUTTONActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        
+
         alexTable.setModel(new DefaultTableModel());
 
         DefaultTableModel dm = (DefaultTableModel) alexTable.getModel();
@@ -3247,7 +3221,6 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
 //
 //        wakeUpH.setSelectedIndex(0);
 //        wakeUpM.setSelectedIndex(0);
-
         ////////////
         //mom 
         LO1_arrivalDate.setCalendar(null);
@@ -3268,8 +3241,8 @@ public class sleepForm extends javax.swing.JFrame implements KeyListener {
 
         SUBMITBUTTON.setEnabled(true);
         CLEARBUTTON.setEnabled(false);
-        
-       
+
+
     }                                           
 
     static void modify(Object[][] array, int span, int anchorRowPosition, int anchorColPosition) {
